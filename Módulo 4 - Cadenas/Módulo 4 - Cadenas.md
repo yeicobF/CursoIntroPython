@@ -7,6 +7,7 @@ Las cadenas de Python son uno de los tipos principales y más comunes en el leng
 Imagina que estás creando un programa para describir algunas mediciones y otra información sobre la Luna. Deberás usar varias operaciones de cadena para crear el resultado.
 
 ## ¿Qué aprenderás?
+
 Al final de este módulo, podrás:
 
 * Utilizar métodos de cadena especiales.
@@ -14,6 +15,7 @@ Al final de este módulo, podrás:
 * Aplicar otras técnicas de formato avanzadas para cambiar la forma en que se presenta el texto.
 
 ## ¿Cuál es el objetivo principal?
+
 En este módulo, incorporarás operaciones de cadena cuando crees un programa Python.
 
 ---
@@ -23,6 +25,7 @@ En este módulo, incorporarás operaciones de cadena cuando crees un programa Py
 Aunque las cadenas en Python parecen ser simples y directas, hay cierta complejidad en las reglas de cadena que es importante comprender. Conocer las reglas le ayuda a evitar ser sorprendido por el comportamiento de las cadenas cuando modifica valores o da formato al texto.
 
 ### Inmutabilidad de las cadenas
+
 En Python, las cadenas son inmutables. Es decir, no pueden cambiar. Esta propiedad del tipo de cadena puede ser sorprendente, porque Python no te da errores cuando alteras las cadenas.
 
 En nuestro ejemplo para este módulo, tienes un solo hecho sobre la Luna que está asignado a una variable, y debes agregarle otro hecho (oración). Usando el intérprete de Python, parece que agregar el segundo hecho alteraría la variable:
@@ -31,6 +34,7 @@ En nuestro ejemplo para este módulo, tienes un solo hecho sobre la Luna que est
 fact = 'The Moon has no atmosphere.'
 fact + 'No sound can be heard on the Moon.'
 ```
+
 *Salida: 'The Moon has no atmosphere.No sound can be heard on the Moon.'*
 
 Aunque puede parecer que hemos modificado la variable ``fact``, una comprobación rápida del valor revela que el valor original no ha cambiado:
@@ -38,6 +42,7 @@ Aunque puede parecer que hemos modificado la variable ``fact``, una comprobació
 ```
 fact
 ```
+
 *Salida: 'The Moon has no atmosphere.'*
 
 El truco aquí es que debes usar un valor devuelto. Cuando agregas cadenas, Python no modifica ninguna cadena, pero devuelve una nueva cadena como resultado. Para mantener este nuevo resultado, asígnelo a una nueva variable:
@@ -46,6 +51,7 @@ El truco aquí es que debes usar un valor devuelto. Cuando agregas cadenas, Pyth
 two_facts = fact + 'No sound can be heard on the Moon.'
 two_facts
 ```
+
 *Salida: 'The Moon has no atmosphere.No sound can be heard on the Moon.'*
 
 Como resultado, las operaciones en cadenas siempre producen nuevas cadenas.
@@ -100,11 +106,11 @@ print(multiline)
 Facts about the Moon:
  There is no atmosphere.
  There is no sound.
- ```
+```
 
  Puedes lograr el mismo resultado utilizando comillas triples:}
 
- ```
+```
  multiline = """Facts about the Moon:
 ...  There is no atmosphere.
 ...  There is no sound."""
@@ -112,7 +118,7 @@ print(multiline)
 Facts about the Moon:
  There is no atmosphere.
  There is no sound
-  ```
+```
 
 ---
 
@@ -125,6 +131,7 @@ Los métodos de cadena forman parte del tipo ``str``. Esto significa que los mé
 ```
 'temperatures and facts about the moon'.title()
 ```
+
 *Salida: 'Temperatures And Facts About The Moon'*
 
 Y el mismo comportamiento y uso ocurre en una variable:
@@ -133,6 +140,7 @@ Y el mismo comportamiento y uso ocurre en una variable:
 heading = 'temperatures and facts about the moon'
 heading.title()
 ```
+
 *Salida: 'Temperatures And Facts About The Moon'*
 
 ### Dividir una cadena
@@ -144,6 +152,7 @@ temperatures = '''Daylight: 260 F
 ... Nighttime: -280 F'''
 temperatures .split()
 ```
+
 *Salida: ['Daylight:', '260', 'F', 'Nighttime:', '-280', 'F']*
 
 En este ejemplo, se trata de varias líneas, por lo que el carácter de nueva línea (implícito) se puede utilizar para dividir la cadena al final de cada línea, creando líneas individuales:
@@ -151,6 +160,7 @@ En este ejemplo, se trata de varias líneas, por lo que el carácter de nueva l�
 ```
 temperatures .split('\n')
 ```
+
 *Salida: ['Daylight: 260 F', 'Nighttime: -280 F']*
 
 Este tipo de división se vuelve útil cuando necesita un bucle para procesar o extraer información, o cuando está cargando datos de un archivo de texto u otro recurso.
@@ -164,13 +174,16 @@ La forma más sencilla de descubrir si existe una palabra, un carácter o un gru
 ```
 'Moon' in 'This text will describe facts and challenges with space travel'
 ```
+
 *Salida: False*
+
 ```
 'Moon' in 'This text will describe facts about the Moon'
 ```
+
 *Salida: True*
 
-Un enfoque para encontrar la posición de una palabra específica en una cadena es usar el método ```.find()```:
+Un enfoque para encontrar la posición de una palabra específica en una cadena es usar el método ``.find()``:
 
 ```
 temperatures = """Saturn has a daytime temperature of -170 degrees Celsius,
@@ -180,13 +193,15 @@ temperatures = """Saturn has a daytime temperature of -170 degrees Celsius,
 ```
 temperatures.find('Moon')
 ```
+
 *Salida: -1*
 
-El método ```.find()``` devuelve ```-1``` un cuando no se encuentra la palabra o devuelve el índice (el número que representa el lugar en la cadena). Así es como se comportaría si estuvieras buscando la palabra Marte:
+El método ``.find()`` devuelve ``-1`` un cuando no se encuentra la palabra o devuelve el índice (el número que representa el lugar en la cadena). Así es como se comportaría si estuvieras buscando la palabra Marte:
 
 ```
 temperatures.find('Mars')
 ```
+
 *Salida: 68*
 
 ``68`` es la posición donde aparece en la cadena 'Mars'.
@@ -196,10 +211,13 @@ Otra forma de buscar contenido es usar el método ``.count()``, que devuelve el 
 ```
 temperatures.count('Mars')
 ```
+
 *Salida: 1*
+
 ```
 temperatures.count('Moon')
 ```
+
 *Salida: 0*
 
 Las cadenas en Python distinguen entre mayúsculas y minúsculas, lo que significa que Luna (Moon) y luna (moon) se consideran palabras diferentes. Para realizar una comparación sin distinción de mayúsculas y minúsculas, puedes convertir una cadena en todas las letras minúsculas mediante el método: ``.lower()``.
@@ -207,6 +225,7 @@ Las cadenas en Python distinguen entre mayúsculas y minúsculas, lo que signifi
 ```
 "The Moon And The Earth".lower()
 ```
+
 *Salida: 'the moon and the earth'*
 
 Al igual que el método ``.lower()``, las cadenas tienen un método que hace lo contrario ``.upper()``, convirtiendo cada carácter en mayúsculas:
@@ -214,6 +233,7 @@ Al igual que el método ``.lower()``, las cadenas tienen un método que hace lo 
 ```
 'The Moon And The Earth'.upper()
 ```
+
 *'THE MOON AND THE EARTH'*
 
 Cuando buscas y compruebas contenido, un enfoque más sólido es poner en minúsculas una cadena para que el estilo de escritura no impida una coincidencia. Por ejemplo, si estás contando el número de veces que aparece 'la' palabra, el método no contaría las veces en que aparece 'La', aunque ambas sean la misma palabra. Puedes utilizar el método ``.lower()`` para cambiar todos los caracteres a minúsculas.
@@ -225,31 +245,37 @@ Hay ocasiones en las que procesarás texto para extraer información que es irre
 ```
 temperatures = 'Mars Average Temperature: -60 C'
 ```
+
 Para extraer la temperatura promedio en Marte (Mars), puedes hacerlo con los siguientes métodos:
 
 ```
 parts = temperatures.split(':')
 parts
 ```
+
 *Salida: ['Mars average temperature', ' -60 C']*
 
 ```
 parts[-1]
 ```
+
 *Salida: ' -60 C'*
 
 Los métodos anteriores confían ciegamente en que todo lo que está después de los ``dos puntos (:)`` es una temperatura. La cadena se divide en cuanto encuentra ``:``, lo que produce una lista de dos elementos. Usando ``[-1]`` en la lista devuelve el último elemento, que es la temperatura en este ejemplo.
 
 Si el texto es irregular, no puedes usar los mismos métodos de división para obtener el valor. Debes iterar por todos los elementos y comprobar si los valores son de un tipo determinado. Python tiene métodos que ayudan a comprobar el tipo de cadena:
+
 ```
 >>> mars_temperature = 'The highest temperature on Mars is about 30 C'
 ```
+
 ```
 for item in mars_temperature.split():
     if item.isnumeric():
         print(item)
 
 ```
+
 *Salida: 30*
 
 Al igual que el método ``.isnumeric()``, puedes comprobar si hay cadenas que se parezcan a decimales ``.isdecimal()``
@@ -261,6 +287,7 @@ Hay validaciones adicionales que puedes aplicar en cadenas para comprobar si hay
 ```
 '-60'.startswith('-')
 ```
+
 *Salida: True*
 
 Del mismo modo, el método ``.endswith()`` ayuda a verificar el último carácter de una cadena:
@@ -270,10 +297,12 @@ if "30 C".endswith("C"):
     print("This temperature is in Celsius")
 
 ```
+
 *Salida: 'This temperature is in Celsius'*
 
 ### Transformar texto
-Hay otros métodos que ayudan en situaciones en las que el texto necesita ser transformado en otra cosa. 
+
+Hay otros métodos que ayudan en situaciones en las que el texto necesita ser transformado en otra cosa.
 
 Hasta ahora, hemos visto cadenas que pueden usar ``C`` para Celsius y ``F`` para Fahrenheit. Puedes utilizar el método ``.replace()`` para buscar y reemplazar apariciones de un carácter o grupo de caracteres:
 
@@ -295,11 +324,12 @@ text = 'Temperatures on the Moon can vary wildly.'
 ```
 'temperatures' in text.lower()
 ```
+
 *Salida: True*
 
 Es posible que no necesites hacer una verificación que no distinga entre mayúsculas y minúsculas todo el tiempo, pero estandarizar cada letra es un buen enfoque cuando el texto utiliza un estilo de escritura mixto.
 
-Después de dividir el texto y realizar las transformaciones, es posible que debas volver a juntar todas las partes. Así como el método ``.split()`` puede separar caracteres, el método ``.join()`` puede volver a unirlos. 
+Después de dividir el texto y realizar las transformaciones, es posible que debas volver a juntar todas las partes. Así como el método ``.split()`` puede separar caracteres, el método ``.join()`` puede volver a unirlos.
 
 El método ``.join()`` requiere un iterable (como una lista de Python) como argumento, por lo que su uso se ve diferente de otros métodos de cadena:
 
@@ -307,6 +337,7 @@ El método ``.join()`` requiere un iterable (como una lista de Python) como argu
 moon_facts = ['The Moon is drifting away from the Earth.', 'On average, the Moon is moving about 4cm every year']
 '\n'.join(moon_facts)
 ```
+
 *Salida: 'The Moon is drifting away from the Earth.\nOn average, the Moon is moving about 4cm every year'*
 
 En este ejemplo, el carácter salto de línea ``'\n'`` (retorno de carro, newline) se utiliza para unir todos los elementos de la lista.
@@ -319,12 +350,13 @@ Además de transformar el texto y realizar operaciones básicas, como la coincid
 
 #### Formato con signo de porcentaje ``(%)``
 
-El marcador de posición es ``%s``, y la variable se pasa al texto después del carácter ``%`` fuera de la cadena. A continuación te explico cómo dar formato mediante el uso del carácter``%``:
+El marcador de posición es ``%s``, y la variable se pasa al texto después del carácter ``%`` fuera de la cadena. A continuación te explico cómo dar formato mediante el uso del carácter ``%``:
 
 ```
 mass_percentage = '1/6'
 print('On the Moon, you would weigh about %s of your weight on Earth' % mass_percentage)
 ```
+
 *Salida: On the Moon, you would weigh about 1/6 of your weight on Earth*
 
 El uso de múltiples valores cambia la sintaxis, ya que requiere paréntesis para rodear las variables que se pasan:
@@ -334,6 +366,7 @@ print("""Both sides of the %s get the same amount of sunlight,
     but only one side is seen from %s because
     the %s rotates around its own axis when it orbits %s.""" % ('Moon', 'Earth', 'Moon', 'Earth'))
 ```
+
 *Salida: Both sides of the Moon get the same amount of sunlight,
 but only one side is seen from Earth because
 the Moon rotates around its own axis when it orbits Earth.*
@@ -348,6 +381,7 @@ El método ``.format()``utiliza llaves ``({})`` como marcadores de posición den
 mass_percentage = '1/6'
 print('On the Moon, you would weigh about {} of your weight on Earth'.format(mass_percentage))
 ```
+
 *Salida: On the Moon, you would weigh about 1/6 of your weight on Earth*
 
 No es necesario asignar variables repetidas varias veces, lo que lo hace menos detallado porque se deben asignar menos variables:
@@ -356,6 +390,7 @@ No es necesario asignar variables repetidas varias veces, lo que lo hace menos d
 print("""You are lighter on the {0}, because on the {0} 
 ... you would weigh about {1} of your weight on Earth""".format("Moon", mass_percentage))
 ```
+
 *Salida: You are lighter on the Moon, because on the Moon you would weigh about 1/6 of your weight on Earth*
 
 En lugar de llaves vacías, la sustitución es usar números. Si queremos usar en el primer argumento ``{0}`` (índice de cero) en este caso ``Moon{0}`` sería con el método ``.format()``. Para la repetición simple ``{0}`` funciona bien, pero reduce la legibilidad. Para mejorar la legibilidad, utilizamos argumentos de palabras clave en ``.format()`` y, a continuación, hacemos referencia a los mismos argumentos dentro de las llaves:
@@ -374,6 +409,7 @@ A partir de la versión 3.6 de Python, es posible usar f-strings. Estas cadenas 
 ```
 print(f'On the Moon, you would weigh about {mass_percentage} of your weight on Earth')
 ```
+
 *Salida: On the Moon, you would weigh about 1/6 of your weight on Earth*
 
 Las variables van dentro de llaves y la cadena debe usar el prefijo ``f``
@@ -383,6 +419,7 @@ Además de que las cadenas f son menos detalladas que cualquier otra opción de 
 ```
 round(100/6, 1)
 ```
+
 *Salida: 16.7*
 
 Con las cadenas f, no es necesario asignar un valor a una variable de antemano:
@@ -390,6 +427,7 @@ Con las cadenas f, no es necesario asignar un valor a una variable de antemano:
 ```
 print(f'On the Moon, you would weigh about {round(100/6, 1)}% of your weight on Earth')
 ```
+
 *Salida: On the Moon, you would weigh about 16.7% of your weight on Earth*
 
 El uso de una expresión no requiere una llamada a una función. Cualquiera de los métodos de cadena también son válidos. Por ejemplo, la cadena podría imponer un estilo de escritura específico para crear un título:
@@ -398,9 +436,10 @@ El uso de una expresión no requiere una llamada a una función. Cualquiera de l
 subject = 'interesting facts about the moon'
 f'{subject.title()}'
 ```
+
 'Interesting Facts About The Moon'
 
---- 
+---
 
 # Resumen
 
@@ -408,7 +447,7 @@ Las cadenas de Python son uno de los tipos de datos más comunes utilizados en e
 
 * Uso del formateador ``%``.
 * Uso de ``.format()`` en una cadena.
-* Usamos ``f-strings``.  
+* Usamos ``f-strings``.
 
 Este conocimiento fundamental te ayudará con otras estructuras de datos en Python que funcionan bien con cadenas, como diccionarios y listas.
 
@@ -417,6 +456,7 @@ Curso Propedútico de Python para Launch X - Innovacción Virtual.
 Material desarrollado con base en los contenidos de MSLearn y la metáfora de LaunchX, traducción e implementación por: Fernanda Ochoa - Learning Producer de LaunchX.
 
 Redes:
+
 * GitHub: [FernandaOchoa](https://github.com/FernandaOchoa)
 * Twitter: [@imonsh](https://twitter.com/imonsh)
 * Instagram: [fherz8a](https://www.instagram.com/fherz8a/)

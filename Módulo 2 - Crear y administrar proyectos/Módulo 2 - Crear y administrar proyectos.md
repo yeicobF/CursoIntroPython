@@ -11,6 +11,7 @@ Entonces, ¿Qué hacer? Debes encontrar una manera de que tu programa funcione d
 A medida que tus habilidades crecen y comienzas a construir programas más avanzados, siempre deseas comenzar con un buen enfoque. Deseas pensar en el programa que compila como un proyecto, con el código distribuido en muchos archivos. Si es posible, también deseas utilizar bibliotecas que otros han escrito, para acelerar el tiempo de desarrollo.
 
 ## ¿Qué aprenderás?
+
 Al final de este módulo, podrás:
 
 * Crear un proyecto de Python.
@@ -19,6 +20,7 @@ Al final de este módulo, podrás:
 * Restaurar un proyecto a partir de una lista de dependencias.
 
 ## ¿Cuál es el objetivo principal?
+
 Utilizar bibliotecas y planificar tu proyecto para crear programas Python que sean más avanzados.
 
 ### Trabajar con paquetes
@@ -52,22 +54,26 @@ Ejemplo en windows: ``cd Documents/TuFolderPreferido``
 
 Utiliza el siguiente comando para llamar al módulo ``venv``. El comando difiere ligeramente dependiendo de tu sistema operativo.
 
-En consola: 
+En consola:
 ``python3 -m venv env  ``
 
-Donde: 
+Donde:
+
 * python3: La versión de python a utilizar.
 * venv: Llamada al módulo ``venv`` conocido como virtual environment.
 * env: Nombre de nuestro entorno virtual.
 
 En este punto, se crean algunos directorios:
+
 ```
 /env
   /bin
   /include
   lib
 ```
+
 Tu entorno necesita el directorio ``venv`` para realizar un seguimiento de detalles como qué versión de Python y qué bibliotecas está utilizando. No coloque los archivos de programa en el directorio ``venv``. Te sugerimos que coloques tus archivos en el directorio ``src``o algo similar. La estructura del proyecto podría verse así:
+
 ```
   /env
   /src
@@ -82,15 +88,18 @@ Así es como puede verse la activación en distintos sistemas operativos.
 
 ```
   # Bash | Consola
-  # Windows
+  # Windows (Powershell)
+  # https://docs.python.org/3/tutorial/venv.html
   env\bin\activate
 
-  # Linux, WSL o macOS
+
+  # Linux, WSL, GitBash en Windows, o macOS
   source env/bin/activate
 ```
+
 Llamar al comando ``activate`` cambia el mensaje de salida de la consola. Ahora está precedido con ``(env)`` y se parece a este ejemplo:
 
-``` 
+```
   # Bash | Consola
   (env) -> path/to/project 
 ```
@@ -98,9 +107,11 @@ Llamar al comando ``activate`` cambia el mensaje de salida de la consola. Ahora 
 Ahora, ya estás dentro de tu entorno virtual. Cualquier cosa que hagas sucede de forma aislada.
 
 ### ¿Qué es un paquete?
+
 Una de las principales ventajas de utilizar bibliotecas externas es acelerar el tiempo de desarrollo de tu programa. Puedes obtener una biblioteca de este tipo en Internet. Pero al buscar e instalar estas bibliotecas a través de un entorno virtual, te aseguras de instalar estas bibliotecas solo para el entorno virtual y no globalmente para toda la máquina.
 
 ### Instalar un paquete
+
 Instalar un paquete mediante ``pip``. El comando ``pip`` utiliza el Python Package Index, o PyPi para abreviar, para saber dónde obtener los paquetes. Puedes visitar el sitio web de [PyPi](https://pypi.org/) para conocer qué paquetes están disponibles.
 
 Para instalar un paquete, ejecute , como en este ejemplo: pip install
@@ -110,6 +121,8 @@ Para instalar un paquete, ejecute , como en este ejemplo: pip install
 ```
   # Bash | Consola
   pip install python-dateutil
+  # Desde el environment en Windows se ejecuta así (si no, no reconoce pip):
+  python -m pip install python-dateutil
 ```
 
 Si ejecutas el comando anterior, descargará e instalará ``dateutil``, un paquete para analizar el formato de archivo .yml. Después de instalar el paquete, puedes verlo en la lista si expande el directorio lib en env, así:
@@ -120,6 +133,7 @@ Si ejecutas el comando anterior, descargará e instalará ``dateutil``, un paque
     /lib
       /dateutil
 ```
+
 Para ver qué paquetes están ahora instalados en tu entorno virtual, puedes ejecutar ``pip freeze``. Este comando produce una lista de paquetes instalados en el terminal:
 
 *Recuerda: Si deseas instalar un paquete desde un notebook se ejecuta con signo de admiración al inicio. ``!pip freeze``* Sin embargo, no estamos trabajando con notebooks ahorita, estamos ejecutando todo por terminal (consola, bash, cli, cmd, como sea que le digas).
@@ -145,21 +159,22 @@ Observa cómo cambia el mensaje de la terminal. Ya no está precedido por ``(env
   # Bash | Consola
   path/to/project
 ```
-Si ejecutas el comando ``pip freeze``, verás una lista mucho más larga de dependencias. Esta lista indica que verás todos los paquetes instalados en tu máquina en lugar de solo lo que está instalado en tu entorno virtual.
 
+Si ejecutas el comando ``pip freeze``, verás una lista mucho más larga de dependencias. Esta lista indica que verás todos los paquetes instalados en tu máquina en lugar de solo lo que está instalado en tu entorno virtual.
 
 ### Más formas de instalar un paquete
 
 También puedes utilizar los siguientes comandos para instalar un paquete:
 
 * Teniendo un conjunto de archivos en tu máquina e instalándolos desde esa fuente:
+
   ```
   # Bash | Consola
   cd <to where the package is on your machine>
   python3 -m pip install .
   ```
 * Instalar desde un repositorio de GitHub que nos proporciona el control de versiones:
-  
+
   ```
   git+https://github.com/your-repo.git
   ```
@@ -170,6 +185,7 @@ También puedes utilizar los siguientes comandos para instalar un paquete:
   ```
 
 ### Usar un paquete instalado
+
 Ahora tienes un paquete instalado. ¿Cómo se usa en el código?
 
 Asegúrate de tener un directorio para tus archivos. Te sugerimos que llames al directorio (folder) src y agregues un archivo Python llamado app.py. Ahora agrega un poco de código para llamar al comando ``pipdate``:
@@ -190,6 +206,7 @@ Curso Propedútico de Python para Launch X - Innovacción Virtual.
 Material desarrollado con base en los contenidos de MSLearn y la metáfora de LaunchX, traducción e implementación por: Fernanda Ochoa - Learning Producer de LaunchX.
 
 Redes:
+
 * GitHub: [FernandaOchoa](https://github.com/FernandaOchoa)
 * Twitter: [@imonsh](https://twitter.com/imonsh)
 * Instagram: [fherz8a](https://www.instagram.com/fherz8a/)

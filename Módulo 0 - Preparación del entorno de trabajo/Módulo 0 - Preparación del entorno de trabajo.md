@@ -174,7 +174,7 @@ Enseguida, crea un bloque Markdown para anotar la descripción:
 Muestra diez minutos de niveles de oxígeno en tu nave.
 ```
 
-Creamos un nuevo bloque de código e importamos dos bibliotecas ```numpy``` y ```matplotlib```, para crear un gráfico de barras.
+Creamos un nuevo bloque de código e importamos dos bibliotecas ``numpy`` y ``matplotlib``, para crear un gráfico de barras.
 
 ```
     import numpy as np
@@ -184,33 +184,35 @@ Creamos un nuevo bloque de código e importamos dos bibliotecas ```numpy``` y ``
 
     plt.bar(range(len(oxy_nums)), oxy_nums)
     plt.show()
-```    
+```
+
 Por supuesto, estos datos son una maqueta de datos reales, que se utilizan para crear una matriz de 100 enteros entre 1 y 10.
 
 El gráfico de barras se ve así:
 ![](../images/chart.png)
 
-### Realizar cálculos 
+### Realizar cálculos
+
 A continuación, deseas mostrar el tiempo que su barco necesita tomar para llegar a una buena velocidad. Anota y crea una ecuación que te permitirá ingresar la velocidad de inicio de tu nave, la velocidad final deseada y la aceleración en metros por segundo.
 
 Creamos un bloque markdown para explicar la ecuación:
 
-``` 
+```
 ## Velocidad de la nave
 
 Muestra los segundos necesarios para pasar de 0 a 11200 metros por segundo, dada la aceleración de la nave en metros por segundo.
-``` 
+```
 
 Agrega un bloque de código para la ecuación:
 
-``` 
+```
 endVelocity = 11200
 startVelocity = 0
 acceleration = 9.8
 
 time = (endVelocity - startVelocity) / acceleration
 print("Tiempo para alcanzar la velocidad deseada = ", time)
-``` 
+```
 
 Ejecuta el bloque de código para determinar cuánto tiempo tardará en alcanzar la velocidad deseada.
 
@@ -218,12 +220,12 @@ Ajusta los valores de velocidad de inicio y fin, o la aceleración, para determi
 
 ¡Felicidades! Has creado con éxito el manual de una nave que muestra información útil sobre su nave espacial. Debido a que todo está contenido en un notebook de Jupyter, no tendrás ninguna dificultad para realizar un seguimiento de él, ya que está bien anotado y bien mostrado. ¡Incluso incluye un interruptor de encendido! Los notebooks Jupyter son una forma útil de mostrar todo tipo de datos e incluso pequeñas interfaces de usuario.
 
-
 Curso Propedútico de Python para Launch X - Innovacción Virtual.
 
 Material desarrollado con base en los contenidos de MSLearn y la metáfora de LaunchX, traducción e implementación por: Fernanda Ochoa - Learning Producer de LaunchX.
 
 Redes:
+
 * GitHub: [FernandaOchoa](https://github.com/FernandaOchoa)
 * Twitter: [@imonsh](https://twitter.com/imonsh)
 * Instagram: [fherz8a](https://www.instagram.com/fherz8a/)
