@@ -9,6 +9,7 @@ Imagina que vas a crear un programa para analizar el número de lunas en diferen
 En este módulo, crearás un programa que puede realizar estos tipos de operaciones. Utilizaremos diccionarios de Python para modelar los datos. Al final del módulo, podrás trabajar con diccionarios de Python para almacenar datos complejos.
 
 ## ¿Qué aprenderás?
+
 En este módulo, podrás hacer lo siguiente:
 
 * Identificar cuándo se debe usar un diccionario.
@@ -81,6 +82,7 @@ print(planet['name'])
 
 # Muestra Earth
 ```
+
 Aunque el comportamiento de `get` y los corchetes (`[ ]`) suele ser el mismo para recuperar elementos, hay una diferencia principal. Si una clave no está disponible, `get` devuelve `None` y `[ ]` genera un error `KeyError`.
 
 ```
@@ -154,6 +156,7 @@ planet.pop('orbital period')
 ```
 
 ### Tipos de data complejos
+
 Los diccionarios pueden almacenar cualquier tipo de valor, incluidos otros diccionarios. Esto te permite modelar datos complejos según sea necesario. Imagina que debes que almacenar el diámetro de `planet`, que se podría medir alrededor de su ecuador o de los polos. Puedes crear otro diccionario dentro de `planet` para almacenar esta información:
 
 ```
@@ -172,6 +175,7 @@ planet['diameter (km)'] = {
 #   }
 # }
 ```
+
 Para recuperar valores en un diccionario anidado, debe puedes utilizar corchetes `[ ]` o llamar a `get`.
 
 ```
@@ -189,6 +193,7 @@ Para ayudar a admitir estos escenarios, Python te permite tratar las claves y lo
 Imagina un diccionario en el que se almacenan cantidades mensuales de precipitaciones. Es probable que tengas claves para cada mes y sus precipitaciones asociadas. Quieres sumar el total de precipitaciones, y escribir el código para realizar la operación mediante cada clave individual sería bastante tedioso.
 
 ### Recuperación de todas las claves y valores
+
 El método `keys()` devuelve un objeto de lista que contiene todas las claves. Puedes usar este método para iterar por todos los elementos del diccionario.
 
 Imagina que tiene el siguiente diccionario, en el que se almacenan los últimos tres meses de precipitaciones (rainfall).
@@ -212,7 +217,8 @@ for key in rainfall.keys():
 # november: 4.2cm
 # december: 2.1cm
 ```
-*Para cada clave en las claves(keys()) contenidas en `rainfalls`:  muestra la clave que estás iterando (meses):  así como el valor (número) de la clave que estamos iterando (clave-mes : valor-número) en cm* 
+
+*Para cada clave en las claves(keys()) contenidas en `rainfalls`:  muestra la clave que estás iterando (meses):  así como el valor (número) de la clave que estamos iterando (clave-mes : valor-número) en cm*
 
 ### Determinando la existencia de una clave en un diccionario
 
@@ -235,6 +241,7 @@ else:
 
 # Como december si existe, el valor será 3.1
 ```
+
 ### Recuper todos los valores de un diccionario
 
 De forma similar a `keys()`, `values()` devuelve la lista de todos los valores de un diccionario sin sus claves correspondientes. Esto puede resultar útil cuando se usa la clave con fines de etiquetado, como en el ejemplo anterior, en el que las claves son el nombre del mes. Puedes usar `values()` para determinar el importe total de las precipitaciones:
@@ -245,7 +252,7 @@ total_rainfall = 0
 
 # Para cada valor en los valores de rainfall
 for value in rainfall.values():
-    
+  
     # El total de las precipitaciones será igual a ese mismo + el valor que se está iterando
 
     total_rainfall = total_rainfall + value
@@ -264,7 +271,7 @@ La mayoría de los programas necesitan datos más complejos que los valores de c
 
 Mediante los diccionarios, has podido crear una variable para almacenar todos los datos relacionados. Después, has usado `keys` y `values` para interactuar directamente con los datos, sin utilizar nombres de clave para realizar cálculos.
 
-Los diccionarios de Python son objetos flexibles, lo que permite modelar datos complejos y relacionados. 
+Los diccionarios de Python son objetos flexibles, lo que permite modelar datos complejos y relacionados.
 
 En este módulo, has aprendido a:
 
@@ -279,6 +286,7 @@ Curso Propedútico de Python para Launch X - Innovacción Virtual.
 Material desarrollado con base en los contenidos de MSLearn y la metáfora de LaunchX, traducción e implementación por: Fernanda Ochoa - Learning Producer de LaunchX.
 
 Redes:
+
 * GitHub: [FernandaOchoa](https://github.com/FernandaOchoa)
 * Twitter: [@imonsh](https://twitter.com/imonsh)
 * Instagram: [fherz8a](https://www.instagram.com/fherz8a/)
